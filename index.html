@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <link href="style.css" rel="stylesheet">
+    <title>responsive-website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/ligconsolata" rel="stylesheet">
+
+
+    <link rel="stylesheet" 
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    </head>
+
+    <body>
+        <header class="relative z-40 bg-[#212121]">
+            <input id="nav-toggle" type="checkbox" class="peer hidden" />
+
+            <div class="mx-auto max-w-full
+                        px-4
+                        md:px-8
+                        lg:px-8
+                        xl:px-8
+                        py-4
+                        max-w-screen-md
+                        md:max-w-[864px]
+                        lg:max-w-[1140px]
+                        xl:max-w-[1440px]
+                        ">
+                <div class="flex items-center gap-6 relative">
+                    <a href="#" class="flex items-center gap-2 shrink-0">
+                        <img src="assets/logo-comeback.svg" class="h-20 w-20" />
+                    </a>
+
+                    <div class="ml-auto flex items-center gap-5">
+
+                        <label for="nav-toggle"
+                            class="inline-flex h-20 w-20 items-center justify-center z-20 cursor-pointer"
+                            aria-label="Open menu">
+                                <img src="assets/menu.svg" class="h-12 w-12" />
+                        </label>
+                    </div>
+                </div>
+            </div>
+    
+            <nav
+            class="hidden peer-checked:flex h-[120vh]
+                    absolute inset-x-0 top-0 z-50      
+                    flex-col bg-[#212121]
+                    bg-[url('assets/imgs/Group5795.png')] bg-no-repeat bg-left-bottom bg-contain">
+
+                <div class="pt-20 flex justify-center">
+                    <a href="index.html" class="flex items-center gap-3">
+                    <img src="assets/logo-comeback.svg" alt="logo" class="h-20 w-20" />
+                    </a>
+                </div>
+                <!--단위는 4단위만 가능//gap=요소 사이/mt=margine-top-->
+                <ul class="mt-32 px-6 flex flex-col items-center gap-24 text-2xl font-medium">
+                    <li class="animate__animated animate__fadeInUp"><a href="index.html" class="text-white hover:border-b-2 hover:border-white pb-1 transition">Home</a></li>
+                    <li class="animate__animated animate__fadeInUp"><a href="work.html" class="text-white hover:border-b-2 hover:border-white pb-1 transition">Work</a></li>
+                    <li class="animate__animated animate__fadeInUp"><a href="faq.html" class="text-white hover:border-b-2 hover:border-white pb-1 transition">FAQ</a></li>
+                </ul>
+
+                <div class="mt-auto px-6 pb-10 flex justify-center">
+                     <label for="nav-toggle" aria-label="Close menu" class="cursor-pointer"></label>
+                        <img src="assets/menu.svg" alt="menu" class="h-6 w-6"/>
+                    </label>
+                </div>
+            </nav>
+        </header>
+            <section class="hero">
+                <pre><code id="typed-code"></code></pre>
+            </section>
+
+            <section class="carousel" id="carousel">
+                <div class="carousel_track" id="track"></div>
+                <div class="edge edge--left"></div>
+                <div class="edge edge--right"></div>
+            </section>
+            
+    <!--footer-->    
+        <footer>
+            <div class="nav-footer bg-[#181818]">
+               
+                <ul class="mt-10 px-6 flex flex-row items-center gap-1 text-base font-light">
+                    <li class="animate__animated animate__fadeInUp"><a href="index.html" class="hover:text-white">Home</a></li>
+                    <li class="animate__animated animate__fadeInUp"><a href="work.html" class="hover:text-white">Work</a></li>
+                    <li class="animate__animated animate__fadeInUp"><a href="faq.html" class="hover:text-white">FAQ</a></li>
+                </ul>               
+                
+                <div class="hidden lg:flex items-center gap-4 lg:order-none">
+                    <a href="#" aria-label="linkedin"><img src="assets/Li.svg" class="h-5 w-5" alt="linkedin" /></a>
+                    <a href="#" aria-label="behance"><img src="assets/Be.svg" class="h-5 w-5" alt="behance" /></a>
+                    <a href="#" aria-label="instagram"><img src="assets/insta.svg" class="h-5 w-5" alt="instagram" /></a>
+                    <a href="#" aria-label="github"><img src="assets/git.svg" class="h-5 w-5" alt="github" /></a>
+                </div>
+            </div>  
+            <div class="color-white flex justify-start">
+                <p>@2025 Tiana Kim. Portfolio</p>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+        <script src="script.js"></script>
+    </body>
+</html> 
+ 

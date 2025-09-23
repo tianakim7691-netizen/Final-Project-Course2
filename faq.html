@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="style.css" rel="stylesheet">
+    <title>responsive-website-work</title>
+    <link href="https://fonts.cdnfonts.com/css/ligconsolata" rel="stylesheet">
+    <link rel="stylesheet" 
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    </head>
+
+    <body>
+        <header class="relative z-40 bg-[#212121]">
+            <input id="nav-toggle" type="checkbox" class="peer hidden" />
+
+            <div class="mx-auto max-w-full
+                        px-4
+                        md:px-8
+                        lg:px-8
+                        xl:px-8
+                        py-4
+                        max-w-screen-md
+                        md:max-w-[864px]
+                        lg:max-w-[1140px]
+                        xl:max-w-[1440px]
+                        ">
+                <div class="flex items-center gap-6 relative">
+                    <a href="#" class="flex items-center gap-2 shrink-0">
+                        <img src="assets/logo-comeback.svg" class="h-20 w-20" />
+                    </a>
+
+                    <div class="ml-auto flex items-center gap-5">
+
+                        <label for="nav-toggle"
+                            class="inline-flex h-20 w-20 items-center justify-center z-20 cursor-pointer"
+                            aria-label="Open menu">
+                                <img src="assets/menu.svg" class="h-12 w-12" />
+                        </label>
+                    </div>
+                </div>
+            </div>
+    
+            <nav
+            class="hidden peer-checked:flex h-[120vh]
+                    absolute inset-x-0 top-0 z-50      
+                    flex-col bg-[#212121]
+                    bg-[url('assets/imgs/Group5795.png')] bg-no-repeat bg-left-bottom bg-contain">
+
+                <div class="pt-20 flex justify-center">
+                    <a href="index.html" class="flex items-center gap-3">
+                    <img src="assets/logo-comeback.svg" alt="logo" class="h-20 w-20" />
+                    </a>
+                </div>
+                <!--단위는 4단위만 가능//gap=요소 사이/mt=margine-top-->
+                <ul class="mt-32 px-6 flex flex-col items-center gap-24 text-2xl font-medium">
+                    <li class="animate__animated animate__fadeInUp"><a href="index.html" class="text-white hover:border-b-2 hover:border-white pb-1 transition">Home</a></li>
+                    <li class="animate__animated animate__fadeInUp"><a href="work.html" class="text-white hover:border-b-2 hover:border-white pb-1 transition">Work</a></li>
+                    <li class="animate__animated animate__fadeInUp"><a href="faq.html" class="text-white hover:border-b-2 hover:border-white pb-1 transition">FAQ</a></li>
+                </ul>
+
+                <div class="mt-auto px-6 pb-10 flex justify-center">
+                     <label for="nav-toggle" aria-label="Close menu" class="cursor-pointer"></label>
+                        <img src="assets/menu.svg" alt="menu" class="h-6 w-6"/>
+                    </label>
+                </div>
+            </nav>
+        </header>
+        <main class="flex items-center justify-center min-h-screen">
+            <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 px-4">
+                <!-- 왼쪽 Hero+Search -->
+                <div class="space-y-10">
+                    <section class="faq-hero text-left">
+                        <h1 class="text-6xl font-bold mb-4 text-white">Any question?</h1>
+                        <p class="text-white">
+                        Find answers to the most common questions about my design process and myself.
+                        </p>
+                    </section>
+
+                    <!-- FAQ Search -->
+                    <section class="faq-search">
+                        <form id="faqSearchForm" role="search" aria-label="FAQ search" class="w-full md:max-w-md">
+                        <label for="faqQuery" class="block text-[#FF3600] font-medium mb-2">
+                            What is your question?
+                        </label>
+                        <div class="flex border border-gray-500 rounded overflow-hidden">
+                            <input
+                            type="search"
+                            id="faqQuery"
+                            name="q"
+                            placeholder="Type your question"
+                            autocomplete="off"
+                            class="flex-grow px-3 py-2 text-black"
+                            />
+                            <button
+                            type="submit"
+                            aria-label="Search"
+                            class="px-4 bg-gray-700 text-white"
+                            >
+                            🔍
+                            </button>
+                        </div>
+                        </form>
+                    </section>
+                    </div>
+
+                    <!-- 오른쪽: Accordion -->
+                    <div>
+                    <section class="faq-list w-full text-white">
+                        <ul class="accordion divide-y divide-gray-600" data-accordion="single">
+                        <!-- Q1 -->
+                        <li class="faq-item py-4" data-faq>
+                            <h3 id="q-from" class="sr-only">Where are you from?</h3>
+                            <button
+                            class="faq-toggle w-full flex justify-between items-center text-left"
+                            aria-expanded="true"
+                            aria-controls="a-from"
+                            data-accordion-button
+                            >
+                            <span>Where are you from?</span>
+                            <span class="icon">−</span>
+                            </button>
+                            <div
+                            id="a-from"
+                            class="faq-panel mt-2 text-gray-300"
+                            role="region"
+                            aria-labelledby="q-from"
+                            data-accordion-panel
+                            >
+                            <p>I’m originally from Korea, currently based in Vancouver.</p>
+                            </div>
+                        </li>
+
+                        <!-- Q2 -->
+                        <li class="faq-item py-4" data-faq>
+                            <h3 id="q-inspire" class="sr-only">What inspires you the most?</h3>
+                            <button
+                            class="faq-toggle w-full flex justify-between items-center text-left"
+                            aria-expanded="false"
+                            aria-controls="a-inspire"
+                            data-accordion-button
+                            >
+                            <span>What inspires you the most?</span>
+                            <span class="icon">+</span>
+                            </button>
+                            <div
+                            id="a-inspire"
+                            class="faq-panel mt-2 text-gray-300 hidden"
+                            role="region"
+                            aria-labelledby="q-inspire"
+                            data-accordion-panel
+                            >
+                            <p>Daily life, textures in nature, and minimal but playful design.</p>
+                            </div>
+                        </li>
+
+                        <!-- Q3 -->
+                        <li class="faq-item py-4" data-faq>
+                            <h3 id="q-style" class="sr-only">What’s your design style?</h3>
+                            <button
+                            class="faq-toggle w-full flex justify-between items-center text-left"
+                            aria-expanded="false"
+                            aria-controls="a-style"
+                            data-accordion-button
+                            >
+                            <span>What’s your design style?</span>
+                            <span class="icon">+</span>
+                            </button>
+                            <div
+                            id="a-style"
+                            class="faq-panel mt-2 text-gray-300 hidden"
+                            role="region"
+                            aria-labelledby="q-style"
+                            data-accordion-panel
+                            >
+                            <p>Clean layouts with thoughtful details. I like balancing functionality and aesthetics.</p>
+                            </div>
+                        </li>
+
+                        <!-- Q4 -->
+                        <li class="faq-item py-4" data-faq>
+                            <h3 id="q-feedback" class="sr-only">How do you handle feedback?</h3>
+                            <button
+                            class="faq-toggle w-full flex justify-between items-center text-left"
+                            aria-expanded="false"
+                            aria-controls="a-feedback"
+                            data-accordion-button
+                            >
+                            <span>How do you handle feedback?</span>
+                            <span class="icon">+</span>
+                            </button>
+                            <div
+                            id="a-feedback"
+                            class="faq-panel mt-2 text-gray-300 hidden"
+                            role="region"
+                            aria-labelledby="q-feedback"
+                            data-accordion-panel
+                            >
+                            <p>I welcome constructive feedback and see it as a chance to make the project stronger.</p>
+                            </div>
+                        </li>
+
+                        <!-- Q5 -->
+                        <li class="faq-item py-4" data-faq>
+                            <h3 id="q-history" class="sr-only">What’s your work history like at this company?</h3>
+                            <button
+                            class="faq-toggle w-full flex justify-between items-center text-left"
+                            aria-expanded="false"
+                            aria-controls="a-history"
+                            data-accordion-button
+                            >
+                            <span>What’s your work history like at this company?</span>
+                            <span class="icon">+</span>
+                            </button>
+                            <div
+                            id="a-history"
+                            class="faq-panel mt-2 text-gray-300 hidden"
+                            role="region"
+                            aria-labelledby="q-history"
+                            data-accordion-panel
+                            >
+                            <p>
+                                I have 15 years of experience studying design. I entered university in 2021, and after graduating,
+                                I worked in a company for 4 years. Currently, I’m working as a freelancer.
+                            </p>
+                            </div>
+                        </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </main>
+
+        <script>
+        /* ===== FAQ: Single-Open Accordion + Search ===== */
+        (function () {
+        const accordion = document.querySelector('[data-accordion="single"]');
+        const buttons   = accordion ? accordion.querySelectorAll('[data-accordion-button]') : [];
+        const form      = document.getElementById('faqSearchForm');
+        const input     = document.getElementById('faqQuery');
+        const items     = accordion ? accordion.querySelectorAll('.faq-item') : [];
+
+        /* --- helpers --- */
+        function panelOf(btn){
+            const id = btn.getAttribute('aria-controls');
+            return id ? document.getElementById(id) : null;
+        }
+        function iconOf(btn){
+            return btn.querySelector('.icon');
+        }
+        function closeAll(){
+            buttons.forEach(b=>{
+            b.setAttribute('aria-expanded','false');
+            const p = panelOf(b);
+            if (p){ p.classList.add('hidden'); }
+            const ic = iconOf(b);
+            if (ic) ic.textContent = '+';
+            });
+        }
+        function openOne(btn){
+            const p = panelOf(btn);
+            if (!p) return;
+            closeAll();
+            btn.setAttribute('aria-expanded','true');
+            p.classList.remove('hidden');
+            const ic = iconOf(btn);
+            if (ic) ic.textContent = '−';
+        }
+        function toggle(btn){
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            if (expanded){
+            // single 모드: 클릭한 걸 닫기만
+            btn.setAttribute('aria-expanded','false');
+            const p = panelOf(btn);
+            if (p) p.classList.add('hidden');
+            const ic = iconOf(btn);
+            if (ic) ic.textContent = '+';
+            } else {
+            openOne(btn);
+            }
+        }
+
+        /* --- attach accordion events --- */
+        buttons.forEach(btn=>{
+            btn.addEventListener('click', ()=> toggle(btn));
+            btn.addEventListener('keydown', (e)=>{
+            // 접근성: Enter/Space로도 토글
+            if (e.key === 'Enter' || e.key === ' '){
+                e.preventDefault();
+                toggle(btn);
+            }
+            });
+        });
+
+        /* --- search --- */
+        function normalize(s){ return (s||'').toLowerCase().trim(); }
+
+        function filterFAQ(q){
+            const query = normalize(q);
+            let firstMatchBtn = null;
+            let matches = 0;
+
+            items.forEach(li=>{
+            const btn = li.querySelector('[data-accordion-button]');
+            const panel = li.querySelector('[data-accordion-panel]');
+            const qText = normalize(btn?.textContent);
+            const aText = normalize(panel?.textContent);
+
+            const hit = !query || qText.includes(query) || aText.includes(query);
+            li.style.display = hit ? '' : 'none';
+            if (hit){
+                matches++;
+                if (!firstMatchBtn) firstMatchBtn = btn;
+            }
+            });
+
+            // 질의가 있으면 첫 매치만 열고 나머지는 닫기
+            if (query && firstMatchBtn){
+            openOne(firstMatchBtn);
+            } else if (!query){
+            // 쿼리 비우면 모두 닫기
+            closeAll();
+            // 처음 항목 하나만 열고 싶으면 주석 해제:
+            // if (buttons[0]) openOne(buttons[0]);
+            }
+
+            // no-result 표시(옵션): 기존 DOM을 건드리지 않으려면 alert만
+            if (query && matches === 0){
+            // 필요하면 여기에 “No results” 배지 DOM 추가 로직을 넣어도 됨
+            console.info('No FAQ matched your search.');
+            }
+        }
+
+        if (form && input){
+            form.addEventListener('submit', (e)=>{
+            e.preventDefault();
+            filterFAQ(input.value);
+            });
+            // 실시간 필터 원하면:
+            input.addEventListener('input', ()=> filterFAQ(input.value));
+        }
+        })();
+        </script>
+
+
+
+    <!--footer-->    
+        <footer>
+            <div class="nav-footer bg-[#181818]">
+               
+                <ul class="mt-10 px-6 flex flex-row items-center gap-1 text-base font-light">
+                    <li class="animate__animated animate__fadeInUp"><a href="index.html" class="hover:text-white">Home</a></li>
+                    <li class="animate__animated animate__fadeInUp"><a href="work.html" class="hover:text-white">Work</a></li>
+                    <li class="animate__animated animate__fadeInUp"><a href="faq.html" class="hover:text-white">FAQ</a></li>
+                </ul>               
+                
+                <div class="hidden lg:flex items-center gap-4 lg:order-none">
+                    <a href="#" aria-label="linkedin"><img src="assets/Li.svg" class="h-5 w-5" alt="linkedin" /></a>
+                    <a href="#" aria-label="behance"><img src="assets/Be.svg" class="h-5 w-5" alt="behance" /></a>
+                    <a href="#" aria-label="instagram"><img src="assets/insta.svg" class="h-5 w-5" alt="instagram" /></a>
+                    <a href="#" aria-label="github"><img src="assets/git.svg" class="h-5 w-5" alt="github" /></a>
+                </div>
+            </div>  
+            <div class="color-white flex justify-start">
+                <p>@2025 Tiana Kim. Portfolio</p>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+        <script src="script.js"></script>
+    </body>
+</html> 
+ 

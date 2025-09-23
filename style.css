@@ -1,0 +1,404 @@
+
+/*body*/
+html, body { overflow-x: hidden; }
+body {
+    height: 100%;
+    font-family: 'Ligconsolata', serif;
+    background-color: #212121;
+}
+    /*typing*/
+    .hero {
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start; 
+    height: 40vh;
+    margin: 10vh;
+    color: #fff;
+    font-size: 1.3rem;
+    }
+
+    .hero pre {
+    margin: 0;
+    text-align: left; 
+    display: inline-block; 
+    }
+
+    .typed-cursor {
+        font-weight: normal;
+        color: #facc15;
+    }
+
+    .token-key   { color: #8DD3FF; }  
+    .token-str   { color: #FF8D4B; }
+    .token-role  { color: #FF8D4B; } 
+    .token-skill { color: #FF8D4B; } 
+    .token-sec   { color: #FF8D4B; }
+    .token-selector { color: #E1BD60;}
+    .token-brace    { color: #EE8DFF; }
+    
+    
+    /*carousel*/
+    .carousel {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        margin-top: 10vh 0;
+        overflow: hidden;
+        max-width: none;
+        overflow: hidden;
+    }
+    #track {
+        display: flex;
+        gap: 0px;
+        padding: 0px !important;
+        height: 100%;
+        will-change: transform;
+        transform: translate3d(0,0,0);
+    }
+    .item {
+        flex: 0 0 auto;
+        opacity: 0.8;
+    }
+    .item:hover {
+        opacity: 1;
+    }
+    .item img {
+    height: auto;
+    width: auto;
+    max-height: 100%;
+    }
+    .edge {
+        position: absolute;
+        top: 0; bottom: 0;
+        width: 80px;
+        pointer-events: none;
+    }
+    
+
+/*work page*/
+    /* Works 전용 소량 스타일 */
+    #work-grid a.group { overflow:hidden; }
+    #work-grid .thumb { aspect-ratio:3/4; background:#111; }
+    #work-grid img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .2s ease; }
+    #work-grid a.group:hover img { transform:scale(1.02); }
+    
+    #work-pager button { padding:2px 8px; }
+    #work-pager .is-active { color:#f97316; border-bottom:2px solid #f97316; }
+    #work-pager .is-disabled { opacity:.4; cursor:not-allowed; }
+
+/*detail page*/
+
+/* 섹션 컨테이너 폭/여백 보강 */
+section .detail-typo,
+section .gallery-row,
+section .gallery-masonry {
+  max-width: 980px;              /* 본문 폭 */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 1) 히어로 */
+.detail-hero {
+  width: 100vw;               /* 브라우저 전체 폭 */
+  margin: 0;                  /* 상하 여백 초기화 */
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%); /* 중앙 보정 */
+  overflow: hidden;
+}
+
+.detail-hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;           /* 필요하면 높이 제한할 때 꽉 채우기 */
+}
+/* 2) 타이틀/타이포 */
+.detail-typo {
+  text-align: center;
+  color: #fff;
+  padding: 10%;
+  margin: 40px auto 32px;
+}
+.detail-typo img {               /* 로고 */
+  display: inline-block;
+  height: 30px;
+  margin-bottom: 14px;
+}
+.detail-typo h1 {
+  font-family: 'Krona One', sans-serif;
+  font-size: clamp(6rem, 6vw, 6rem);
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: .01em;
+  margin: 6px 0 10px;
+  padding: 1%;
+}
+.detail-typo h4 {
+  font-family: 'Helvetica', sans-serif;
+  font-size: clamp(12px, 1.4vw, 16px);
+  line-height: 1.7;
+  font-weight: 200;
+  color: rgba(255,255,255,.7);
+}
+
+/* 3) Masonry (columns)
+/* 이 섹션만 칼럼 간격은 기본 유지(원하면 0으로 가능) */
+/* 2번 큰 이미지 */
+.gallery-item.featured{
+  column-span: all;
+  width: min(980px, 100%);
+  margin: 0 auto 24px;
+  overflow: hidden;
+  background: #fff;
+}
+.gallery-item.featured img{ display:block; width:100%; height:auto; }
+
+/* 3·4 묶음: 가로로 딱 붙여서(빈틈 0) 가운데 정렬 */
+.gallery-pair-34{
+  column-span: all;               /* 멀티컬럼 흐름 잠깐 끊기 */
+  -webkit-column-span: all;       /* Safari 대비 */
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 좌/우 한 줄 */
+  gap: 5px;                         /* ★ 사이 여백 0 = 딱 붙임 */
+  max-width: 980px;               /* 2번과 동일 폭으로 중앙 정렬 */
+  margin: 0 auto 56px;
+  padding: 5%;
+}
+
+.gallery-pair-34 .gallery-item{
+  margin: 0;
+  background: #fff;
+  overflow: hidden;
+}
+.gallery-pair-34 .gallery-item img{
+  display: block;                 /* 인라인 여백 제거 */
+  width: 100%;
+  height: auto;
+}
+
+/* 바깥쪽만 둥글게 + 살짝 엇갈림 */
+@media (min-width: 641px){
+  .gallery-pair-34 .gallery-item.left  {
+    transform: translateY(100px);      /* 아래로 살짝 */
+  }
+}
+
+/* 모바일: 위아래로 쌓고 엇갈림 제거 */
+@media (max-width: 640px){
+  .gallery-pair-34{
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .gallery-pair-34 .gallery-item{
+    border-radius: 14px;
+    transform: none;
+  }
+}
+
+
+
+/* 페이지 바탕 대비 조금 더 여백 */
+section.mx-auto.max-w-\[1440px\] {
+  padding-bottom: 64px;
+}
+
+/* 다크 배경 유지 */
+body { background-color: #212121; }
+
+/*footer*/
+    footer {
+        color: #fff;
+        background: #181818; 
+    }
+    /*nav*/
+    .nav-footer {
+        padding: 24px 28px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        max-width: 1440px;           /* 페이지 폭 정렬 */
+        margin: 0 auto;
+    }
+    .nav-footer ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 24px;                   /* Home / Works / FAQ 간격 */
+    }
+    .nav-footer a {
+        color: #fff;
+        text-decoration: none;
+        font-family: 'Ligconsolata', monospace;
+        letter-spacing: .02em;
+    }
+    .nav-footer a:hover {
+        opacity: .9;
+        text-decoration: underline;  /* 스샷처럼 살짝 강조 */
+    }
+    .nav-footer > div {
+    display: flex !important;    /* Tailwind의 hidden 클래스가 있어도 보이도록 */
+    align-items: center;
+    gap: 18px;
+    }
+
+.nav-footer > div img {
+  width: 20px;
+  height: 20px;
+  display: block;
+  opacity: .9;
+  transition: transform .15s ease, opacity .15s ease;
+}
+
+.nav-footer > div img:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+/* 하단 카피라이트 줄 */
+footer .color-white {
+  color: #fff;
+  opacity: .75;
+  font-size: 12px;
+  letter-spacing: .04em;
+  padding: 14px 28px 28px;     /* 좌우 여백 맞춤 */
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  
+  .carousel{ height: 55vh; margin: 10vh 0;}
+  #carousel { touch-action: pan-y; }
+  #track{ gap: 0; }                     /* 간격 완전 0 (재확인) */
+  .item{
+    flex: 0 0 80vw;                    /* 화면에 1장만 꽉 차게 */
+    margin: 0; padding: 0; line-height: 0;
+  }
+  .item img{
+    display: block;                     /* 인라인 여백 제거 */
+    width: 100%;
+    height: auto;                 /* 내부 여백 없이 꽉 채움 (크롭 원치 않으면 지워도 됨) */
+  }
+  .edge{ display:none; }                /* 좌우 그라데이션 가림막 쓰지 않으면 숨김 */
+
+  /* 3) 히어로(타이핑) 모바일 여백/크기 조정 */
+  .hero{
+  font-size: clamp(12px, 3.6vw, 16px);
+  position: relative;                 /* 기준 박스 */
+  height: 40vh;                       /* 네가 쓰던 높이 유지 */
+  margin: 10vh 0 0 !important;        /* shorthand에 안 먹히면 !important로 강제 */
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: visible;                   /* 혹시 모를 잘림 방지 */
+}
+
+/* 타이핑 블록을 흐름에서 빼서 캐로셀을 밀지 않게 */
+  .hero pre{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: block;                 /* 인라인블록 → 블록 */
+    max-width: 92vw;                /* 화면 밖으로 못 나가게 */
+    width: 100%;                    /* 부모 기준으로 꽉 채움 */
+    box-sizing: border-box;         /* 패딩 포함 폭 계산 */
+    padding: 0 12px;                /* 좌우 살짝 여백 */
+
+    white-space: pre-wrap;          /* 줄바꿈 허용 */
+    overflow-wrap: anywhere;        /* 아주 긴 토큰도 강제 줄바꿈 */
+    word-break: break-word;         /* 브라우저 호환 줄바꿈 보강 */
+    margin: 0;
+    text-align: left;
+  }
+  /* 4) 상세 히어로/타이포 살짝 컴팩트 */
+  .detail-hero{ width: 100vw; }
+  .detail-typo{
+    padding: 8%;
+    margin: 20px auto 16px;
+  }
+  .detail-typo h1{
+    font-size: clamp(2rem, 8vw, 3rem);  /* 모바일에서 제목 줄이기 */
+  }
+  .detail-typo h4{
+    font-size: clamp(12px, 3.6vw, 14px);
+    line-height: 1.2;
+  }
+
+  /* 5) 갤러리 3·4 묶음 */
+  .gallery-pair-34{
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 16px;
+    margin-bottom: 32px;
+  }
+  .gallery-pair-34 .gallery-item{
+    border-radius: 14px;
+    transform: none;
+  }
+  
+  .nav-footer {
+    flex-direction: column;
+    align-items:center;
+    text-align: center;
+    gap: 16px;
+    padding: 10px;
+  }
+  .nav-footer ul {
+    gap: 16px;
+  }
+  .nav-footer > div {
+    gap: 16px;
+  }
+  footer .color-white {
+    width: 100%;
+    display: flex;
+    justify-content: center;  /* 가운데 정렬 */
+    text-align: center;       /* 텍스트 중앙 */
+    padding: 10px 20px 20px;
+  }
+
+
+    /* 섹션 좌우 여백 늘리기 */
+
+  .faq-hero,
+  .faq-search,
+  .faq-list{
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  /* 타이틀/설명 중앙 정렬 */
+  .faq-hero h1{
+    text-align: center;
+    margin-top: 4rem;
+  }
+  .faq-hero p{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 28rem; /* 문장 폭 너무 넓지 않게 */
+  }
+
+  /* 검색 폼도 중앙 배치 (입력창이 좌로 붙어 보이면) */
+  .faq-search form{
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* 아코디언 본문 폭도 살짝 제한 + 중앙 */
+  .faq-list .accordion{
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 4rem;
+  }
+}
+
+
+
