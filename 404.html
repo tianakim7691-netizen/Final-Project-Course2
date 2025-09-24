@@ -28,7 +28,7 @@
                         xl:max-w-[1440px]
                         ">
                 <div class="flex items-center gap-6 relative">
-                    <a href="#" class="flex items-center gap-2 shrink-0">
+                    <a href="index.html" class="flex items-center gap-2 shrink-0">
                         <img src="assets/logo-comeback.svg" class="h-20 w-20" />
                     </a>
 
@@ -69,10 +69,8 @@
             </nav>
         </header>
         <main class="flex flex-col items-center justify-center min-h-[70vh] text-center px-6">
-        <!-- 큰 404 숫자 -->
-            <h1 class="text-8xl md:text-9xl font-extrabold text-[#FF3600] mb-6">404</h1>
+            <h1 class="text-8xl md:text-9xl font-extrabold text-[#FF3600] mb-6 js-blink404">404</h1>
 
-            <!-- 안내 문구 -->
             <h2 class="text-2xl md:text-3xl font-semibold text-white mb-4">
                 Oops! Page not found
             </h2>
@@ -81,7 +79,6 @@
                 Please check the URL or return to the homepage.
             </p>
 
-            <!-- 버튼들 -->
             <div class="flex gap-4">
                 <a href="index.html" 
                 class="px-6 py-3 bg-[#FF3600] text-white font-medium shadow hover:bg-orange-600 transition">
@@ -92,6 +89,14 @@
                 See Works
                 </a>
             </div>
+
+            <!-- Flexible image -->
+            <picture>
+                <!-- 모바일 버전 (768px 이하일 때) -->
+                <source srcset="assets/fail_mobile.png" media="(max-width: 768px)">
+                <!-- 기본 데스크탑 이미지 -->
+                <img src="assets/fail.png" alt="404 fail image" class="fail-img">
+            </picture>
         </main>
 
 
